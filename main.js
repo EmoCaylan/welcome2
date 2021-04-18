@@ -13,7 +13,7 @@ let config = new YAML(fs.readFileSync("./config.yaml").toString()).json
 
 console.log(config.server)
 
-client.login(config.bot.token).then(() => console.log(`[${client.user.tag}] Başarıyla Giriş yaptım!`)).catch(() => console.error(`Yanlış Bir Token Girdiniz.`))
+client.login(process.env.token).then(() => console.log(`[${client.user.tag}] Başarıyla Giriş yaptım!`)).catch(() => console.error(`Yanlış Bir Token Girdiniz.`))
 
 client.on("ready", () => {
       client.user.setPresence({ activity: { name: `Dark` , type: "PLAYING"}, status: 'idle' })
